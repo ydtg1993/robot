@@ -1,21 +1,20 @@
 package components
 
 import (
+	"errors"
 	"fmt"
-	"strconv"
 	"github.com/tebeka/selenium"
 	"github.com/tebeka/selenium/chrome"
+	"strconv"
 )
 
-func Start(config map[string]string)  {
+func Start(config map[string]string) (*selenium.Service, selenium.WebDriver, error) {
 	opts := []selenium.ServiceOption{}
-	port,_ := strconv.Atoi(config["port"])
+	port, _ := strconv.Atoi(config["port"])
 	service, err := selenium.NewChromeDriverService(config["selenium"], port, opts...)
 	if nil != err {
-		fmt.Println("start a chromedriver service falid", err.Error())
-		return
+		return service, nil, errors.New(err.Error())
 	}
-	defer service.Stop()
 	caps := selenium.Capabilities{
 		"browserName": "chrome",
 	}
@@ -27,23 +26,22 @@ func Start(config map[string]string)  {
 		Prefs: imagCaps,
 		Path:  "",
 		Args: []string{
-			//"--headless", // 设置Chrome无头模式，在linux下运行，需要设置这个参数，否则会报错
+			//"--headless", //
 			//"--no-sandbox",
-			"--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36",
+			"--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36",
 		},
 	}
 
 	caps.AddChrome(chromeCaps)
 	wb, err := selenium.NewRemote(caps, fmt.Sprintf("http://localhost:%d/wd/hub", port))
 	if err != nil {
-		fmt.Println("connect to the webDriver faild", err.Error())
-		return
+		return service, nil, errors.New(err.Error())
 	}
-	//但是不会导致seleniumServer关闭
-	defer wb.Quit()
+
 	err = wb.Get(config["url"])
 	if err != nil {
-		fmt.Println("get page faild", err.Error())
-		return
+		return service, nil, errors.New(err.Error())
 	}
+
+	return service, wb, nil
 }
