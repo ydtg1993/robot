@@ -1,20 +1,23 @@
 package components
 
 import (
-	"errors"
 	"fmt"
 	"github.com/tebeka/selenium"
 	"github.com/tebeka/selenium/chrome"
+	"main/tools"
 	"strconv"
 )
 
-func Start(config map[string]string) (*selenium.Service, selenium.WebDriver, error) {
+func (Robot *Robot) Start() {
+	Robot.Config = tools.Config()
 	opts := []selenium.ServiceOption{}
-	port, _ := strconv.Atoi(config["port"])
-	service, err := selenium.NewChromeDriverService(config["selenium"], port, opts...)
+	port, _ := strconv.Atoi(Robot.Config["port"])
+	service, err := selenium.NewChromeDriverService(Robot.Config["selenium"], port, opts...)
 	if nil != err {
-		return service, nil, errors.New(err.Error())
+		fmt.Println(err.Error())
+		return
 	}
+	Robot.Service = service
 	caps := selenium.Capabilities{
 		"browserName": "chrome",
 	}
@@ -35,13 +38,15 @@ func Start(config map[string]string) (*selenium.Service, selenium.WebDriver, err
 	caps.AddChrome(chromeCaps)
 	wb, err := selenium.NewRemote(caps, fmt.Sprintf("http://localhost:%d/wd/hub", port))
 	if err != nil {
-		return service, nil, errors.New(err.Error())
+		fmt.Println(err.Error())
+		return
 	}
 
-	err = wb.Get(config["url"])
+	err = wb.Get(Robot.Config["url"])
 	if err != nil {
-		return service, nil, errors.New(err.Error())
+		fmt.Println(err.Error())
+		return
 	}
-
-	return service, wb, nil
+	Robot.WebDriver = wb
+	return
 }
