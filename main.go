@@ -1,7 +1,11 @@
 package main
 
-import "main/components"
+import (
+	"main/tools"
+	"main/components"
+)
 
 func main(){
-	components.Start()
+
+	components.Start(tools.Config())
 }

@@ -2,18 +2,15 @@ package components
 
 import (
 	"fmt"
+	"strconv"
 	"github.com/tebeka/selenium"
 	"github.com/tebeka/selenium/chrome"
 )
 
-func Start()  {
-	done := make(chan int)
-	const (
-		seleniumPath = `E:\server\robot\chromedriver.exe`
-		port         = 9515
-	)
+func Start(config map[string]string)  {
 	opts := []selenium.ServiceOption{}
-	service, err := selenium.NewChromeDriverService(seleniumPath, port, opts...)
+	port,_ := strconv.Atoi(config["port"])
+	service, err := selenium.NewChromeDriverService(config["selenium"], port, opts...)
 	if nil != err {
 		fmt.Println("start a chromedriver service falid", err.Error())
 		return
@@ -44,10 +41,9 @@ func Start()  {
 	}
 	//但是不会导致seleniumServer关闭
 	defer wb.Quit()
-	err = wb.Get("https://github.com/ydtg1993")
+	err = wb.Get(config["url"])
 	if err != nil {
 		fmt.Println("get page faild", err.Error())
 		return
 	}
-	<-done
 }
