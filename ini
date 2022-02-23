@@ -1,5 +1,2 @@
 selenium=chromedriver.exe
 port=9515
-url=https://github.com/ydtg1993
-images=0
-headless=0

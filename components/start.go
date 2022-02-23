@@ -8,7 +8,7 @@ import (
 	"strconv"
 )
 
-func (Robot *Robot) Start() {
+func (Robot *Robot) Start(url string) {
 	Robot.Config = tools.Config()
 	opts := []selenium.ServiceOption{}
 	port, _ := strconv.Atoi(Robot.Config["port"])
@@ -29,7 +29,7 @@ func (Robot *Robot) Start() {
 		Prefs: imagCaps,
 		Path:  "",
 		Args: []string{
-			//"--headless", //
+			//"--headless",
 			//"--no-sandbox",
 			"--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36",
 		},
@@ -42,7 +42,7 @@ func (Robot *Robot) Start() {
 		return
 	}
 
-	err = wb.Get(Robot.Config["url"])
+	err = wb.Get(url)
 	if err != nil {
 		fmt.Println(err.Error())
 		return
