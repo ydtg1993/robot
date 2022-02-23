@@ -10,7 +10,7 @@ func main() {
 
 	Robot := new(components.Robot)
 	defer Robot.Service.Stop()
-	Robot.Start("https://github.com/ydtg1993")
-	Robot.TapIn(selenium.ByXPATH, "//*[@id='js-pjax-container']/div[2]/div/div[2]/div[2]/div/div[1]/div/ol/li[1]/div/div/div/div/a/span")
+	Robot.Start("http://uat-pc.9g1npyjn.com/")
+	Robot.TapIn(selenium.ByXPATH, "//*[@id='__layout']/div/section[1]/div[4]/div/div[1]/ul/li[2]")
 	<-done
 }
