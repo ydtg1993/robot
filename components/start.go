@@ -4,15 +4,11 @@ import (
 	"fmt"
 	"github.com/tebeka/selenium"
 	"github.com/tebeka/selenium/chrome"
-	"main/tools"
-	"strconv"
 )
 
 func (Robot *Robot) Start(url string) {
-	Robot.Config = tools.Config()
 	opts := []selenium.ServiceOption{}
-	port, _ := strconv.Atoi(Robot.Config["port"])
-	service, err := selenium.NewChromeDriverService(Robot.Config["selenium"], port, opts...)
+	service, err := selenium.NewChromeDriverService(SELENIUM_PATH, SELENIUM_PORT, opts...)
 	if nil != err {
 		fmt.Println(err.Error())
 		return
@@ -36,7 +32,7 @@ func (Robot *Robot) Start(url string) {
 	}
 
 	caps.AddChrome(chromeCaps)
-	wb, err := selenium.NewRemote(caps, fmt.Sprintf("http://localhost:%d/wd/hub", port))
+	wb, err := selenium.NewRemote(caps, fmt.Sprintf("http://localhost:%d/wd/hub", SELENIUM_PORT))
 	if err != nil {
 		fmt.Println(err.Error())
 		return
