@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f1a2d55-0615-466b-adbb-2c88626c3db7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/robot.go" beforeDir="false" afterPath="$PROJECT_DIR$/components/robot.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/start.go" beforeDir="false" afterPath="$PROJECT_DIR$/components/start.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ini" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,10 +116,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="754" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1645583502262" />
-    <state x="442" y="108" key="CommitChangelistDialog2" timestamp="1645583355310">
+    <state x="442" y="108" key="CommitChangelistDialog2" timestamp="1645585340235">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="442" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1645583355310" />
+    <state x="442" y="108" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1645585340235" />
     <state x="274" y="282" width="1200" height="630" key="DiffContextDialog" timestamp="1645585044455">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -132,22 +128,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1645514505216" />
-    <state width="1340" height="260" key="GridCell.Tab.0.bottom" timestamp="1645585208019">
+    <state width="1340" height="176" key="GridCell.Tab.0.bottom" timestamp="1646709949839">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1645585208019" />
-    <state width="1340" height="260" key="GridCell.Tab.0.center" timestamp="1645585208019">
+    <state width="1340" height="176" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1646709949839" />
+    <state width="1340" height="176" key="GridCell.Tab.0.center" timestamp="1646709949839">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="260" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1645585208019" />
-    <state width="1340" height="260" key="GridCell.Tab.0.left" timestamp="1645585208019">
+    <state width="1340" height="176" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1646709949839" />
+    <state width="1340" height="176" key="GridCell.Tab.0.left" timestamp="1646709949839">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="260" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1645585208019" />
-    <state width="1340" height="260" key="GridCell.Tab.0.right" timestamp="1645585208019">
+    <state width="1340" height="176" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1646709949839" />
+    <state width="1340" height="176" key="GridCell.Tab.0.right" timestamp="1646709949839">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="260" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1645585208019" />
+    <state width="1340" height="176" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1646709949839" />
     <state width="1340" height="260" key="GridCell.Tab.1.bottom" timestamp="1645585208019">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -168,10 +164,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1645514337051" />
-    <state x="434" y="236" key="Vcs.Push.Dialog.v2" timestamp="1645583357741">
+    <state x="434" y="236" key="Vcs.Push.Dialog.v2" timestamp="1645585344134">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="434" y="236" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1645583357741" />
+    <state x="434" y="236" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1645585344134" />
     <state x="274" y="282" width="1200" height="630" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1645585044455">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
